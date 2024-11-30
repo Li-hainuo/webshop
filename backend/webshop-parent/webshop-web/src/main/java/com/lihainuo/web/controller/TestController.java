@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class TestController {
 
-    @PostMapping("/test")
+    @PostMapping("/admin/test")
     @ApiOperationLog(description = "测试接口")
     public User test(@RequestBody User user) {
         throw new BusinessException(RespEnum.PRODUCT_NOT_FOUND);

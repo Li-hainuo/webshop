@@ -25,6 +25,8 @@
         <module>webshop-admin</module>
         <!--公共模块-->
         <module>webshop-common</module>
+        <!--JWT模块-->
+        <module>webshop-jwt</module>
     </modules>
 
     <dependencyManagement>
@@ -68,11 +70,51 @@
                 <artifactId>webshop-common</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>com.lihainuo</groupId>
+                <artifactId>webshop-jwt</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
             <!--Knife4j-->
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
                 <version>4.4.0</version>
+            </dependency>
+            <!--MyBatisPlus-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>3.5.7</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>3.5.7</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>2.3</version>
+            </dependency>
+            <!-- 处理 JSON Web Tokens（JWT）的 Java API -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>0.11.2</version>
+            </dependency>
+            <!-- JSON Web Token（JWT）实现的具体实现库 -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>0.11.2</version>
+            </dependency>
+            <!--处理 JWT 时与 Jackson 库进行集成 用于处理 JSON 数据的序列化和反序列化 -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId>
+                <version>0.11.2</version>
+                <scope>runtime</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

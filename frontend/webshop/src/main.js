@@ -1,13 +1,21 @@
 // import './assets/main.css'
 
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from '@/App.vue'
 import '@/assets/main.css'
+// 注册Element图标库
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+// 导入Animate动画库
+import 'animate.css';
+
 // 导入路由
 import router from '@/router'
 
 const app = createApp(App)
 
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+    app.component(key, component)
+}
 // 应用路由
 app.use(router)
 app.mount('#app')

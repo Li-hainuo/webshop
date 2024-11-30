@@ -1,11 +1,13 @@
 <template>
   <nav class="bg-white border-gray-200 border-b dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+
       <a href="/" class="flex items-center">
         <!--        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />-->
-        <img src="/src/assets/logo.svg" class="h-8 mr-3" alt="Logo"/>
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">李海诺的网上商店</span>
+        <img src="/src/assets/front-logo.svg" class="h-8 mr-3" alt="Logo"/>
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">WebShop</span>
       </a>
+
       <div class="flex items-center md:order-2">
         <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
                 aria-expanded="false"
@@ -44,6 +46,7 @@
           </svg>
         </button>
       </div>
+
       <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
         <div class="relative mt-3 md:hidden">
           <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">

@@ -1,5 +1,6 @@
 import Index from '@/pages/frontdesk/index.vue'
 import Login from '@/pages/backdesk/login.vue'
+import BackPassword from "@/pages/backdesk/backpassword.vue";
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 // 统一在这里声明所有路由
@@ -16,6 +17,13 @@ const routes = [
         component: Login,
         meta: {
             title: 'WebShop 登录页'
+        }
+    },
+    {
+        path: '/backPassword',
+        component: BackPassword,
+        meta: {
+            title: 'WebShop 找回密码页'
         }
     },
 ]

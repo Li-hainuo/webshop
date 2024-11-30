@@ -8,7 +8,7 @@
         <div class="col-span-2 order-2 p-10 md:col-span-1 md:order-1">
           <!-- 指定为 flex 布局，并设置为屏幕垂直水平居中，高度为 100% -->
           <div class="flex justify-center items-center h-full flex-col">
-            <h2 class="font-bold text-4xl mb-7 text-white">WebShop 商店登录</h2>
+            <h2 class="font-bold text-4xl mb-7 text-white">WebShop 找回密码</h2>
             <p class="text-white">一款由 Spring Boot + Mybaits Plus + Vue 3.5 + Vite 4</p>
             <p class="text-white">开发的前后端分离网上商店</p>
             <!-- 指定图片宽度为父级元素的 1/2 -->
@@ -23,12 +23,12 @@
     <div class="col-span-2 order-1 md:col-span-1 md:order-2 bg-white">
       <div class="flex justify-center items-center h-full flex-col animate__animated animate__bounceInRight animate__fast">
         <!-- 大标题，设置字体粗细、大小、下边距 -->
-        <h1 class="font-bold text-4xl mb-5">欢迎回来</h1>
+        <h1 class="font-bold text-4xl mb-5">找回密码</h1>
         <!-- 设置 flex 布局，内容垂直水平居中，文字颜色，以及子内容水平方向 x 轴间距 -->
         <div class="flex items-center justify-center mb-7 text-gray-400 space-x-2">
           <!-- 左边横线，高度为 1px, 宽度为 16，背景色设置 -->
           <span class="h-[1px] w-16 bg-gray-200"></span>
-          <span>账号密码登录</span>
+          <span>找回密码</span>
           <!-- 右边横线 -->
           <span class="h-[1px] w-16 bg-gray-200"></span>
         </div>
@@ -40,7 +40,11 @@
           </el-form-item>
           <el-form-item>
             <!-- 密码框组件 -->
-            <el-input size="large" type="password" placeholder="请输入密码" :prefix-icon="Lock" clearable/>
+            <el-input size="large" type="password" placeholder="请输入新密码" :prefix-icon="Lock" clearable/>
+          </el-form-item>
+          <el-form-item>
+            <!-- 密码框组件 -->
+            <el-input size="large" type="password" placeholder="确认新密码" :prefix-icon="Lock" clearable/>
           </el-form-item>
           <el-form-item>
             <!-- 登录按钮，宽度设置为 100% -->
@@ -50,7 +54,7 @@
         <div class="flex items-center justify-center mb-7 text-gray-400 space-x-2">
           <!-- 左边横线，高度为 1px, 宽度为 16，背景色设置 -->
           <span class="h-[1px] w-16 bg-gray-200"></span>
-          <span><button @click="router.push('/backPassword')">找回密码</button></span>
+          <span><button @click="router.push('/login')">返回登录页</button></span>
           <!-- 右边横线 -->
           <span class="h-[1px] w-16 bg-gray-200"></span>
         </div>

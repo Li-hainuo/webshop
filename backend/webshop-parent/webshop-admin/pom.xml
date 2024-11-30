@@ -31,6 +31,30 @@
             <artifactId>webshop-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <!--jwt模块-->
+        <dependency>
+            <groupId>com.lihainuo</groupId>
+            <artifactId>webshop-jwt</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId> <!-- or jjwt-gson if you prefer Gson -->
+        </dependency>
+
     </dependencies>
 
     <build>
