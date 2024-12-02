@@ -8,7 +8,7 @@
         <div class="col-span-2 order-2 p-10 md:col-span-1 md:order-1">
           <!-- 指定为 flex 布局，并设置为屏幕垂直水平居中，高度为 100% -->
           <div class="flex justify-center items-center h-full flex-col">
-            <h2 class="font-bold text-4xl mb-7 text-white">WebShop 商店登录</h2>
+            <h2 class="font-bold text-4xl mb-7 text-white">WebShop 用户注册</h2>
             <p class="text-white">一款由 Spring Boot + Mybaits Plus + Vue 3.5 + Vite 4</p>
             <p class="text-white">开发的前后端分离网上商店</p>
             <!-- 指定图片宽度为父级元素的 1/2 -->
@@ -21,15 +21,14 @@
 
     <!--右边栏-->
     <div class="col-span-2 order-1 md:col-span-1 md:order-2 bg-white">
-      <div
-          class="flex justify-center items-center h-full flex-col animate__animated animate__bounceInRight animate__fast">
+      <div class="flex justify-center items-center h-full flex-col animate__animated animate__bounceInRight animate__fast">
         <!-- 大标题，设置字体粗细、大小、下边距 -->
-        <h1 class="font-bold text-4xl mb-5">欢迎回来</h1>
+        <h1 class="font-bold text-4xl mb-5">用户注册</h1>
         <!-- 设置 flex 布局，内容垂直水平居中，文字颜色，以及子内容水平方向 x 轴间距 -->
         <div class="flex items-center justify-center mb-7 text-gray-400 space-x-2">
           <!-- 左边横线，高度为 1px, 宽度为 16，背景色设置 -->
           <span class="h-[1px] w-16 bg-gray-200"></span>
-          <span>账号密码登录</span>
+          <span>用户注册</span>
           <!-- 右边横线 -->
           <span class="h-[1px] w-16 bg-gray-200"></span>
         </div>
@@ -41,19 +40,17 @@
           </el-form-item>
           <el-form-item prop="password">
             <!-- 密码框组件 -->
-            <el-input size="large" v-model="form.password" type="password" placeholder="请输入密码" :prefix-icon="Lock"
-                      clearable show-password/>
+            <el-input size="large" type="password" v-model="form.password" placeholder="输入密码" :prefix-icon="Lock" clearable show-password/>
           </el-form-item>
           <el-form-item>
             <!-- 登录按钮，宽度设置为 100% -->
-            <el-button class="w-full" size="large" type="primary" color="#0f172a" @click="onSubmit">登录</el-button>
+            <el-button class="w-full" size="large" type="primary" color="#0f172a" @click="onSubmit">注册</el-button>
           </el-form-item>
         </el-form>
         <div class="flex items-center justify-center mb-7 text-gray-400 space-x-2">
           <!-- 左边横线，高度为 1px, 宽度为 16，背景色设置 -->
           <span class="h-[1px] w-16 bg-gray-200"></span>
-          <span><button @click="router.push('/register')">用户注册</button></span>
-          <span><button @click="router.push('/recover')">找回密码</button></span>
+          <span><button @click="router.push('/login')">返回登录页</button></span>
           <!-- 右边横线 -->
           <span class="h-[1px] w-16 bg-gray-200"></span>
         </div>
@@ -63,12 +60,12 @@
   </div>
 </template>
 
+
 <script setup>
 // 引入 Element Plus 中的用户、锁图标
 import {User, Lock} from '@element-plus/icons-vue'
-import {login} from '@/api/backdesk/user'
+import {register} from '@/api/backdesk/user'
 import {useRouter} from 'vue-router'
-import {setToken} from "@/composables/auth.js"
 import {showMessage} from '@/composables/util'
 import { ref, reactive, onMounted, onBeforeUnmount } from 'vue'
 
@@ -117,41 +114,31 @@ const form = reactive({
   password: ''
 })
 
-// 登录
+// 注册
 const onSubmit = () => {
-  console.log('登录')
+  console.log('注册')
   // 先验证 form 表单字段
   formRef.value.validate((valid) => {
     if (!valid) {
       console.log('表单验证不通过')
       return false
     }
-    login(form.username, form.password).then((res) => {
+    register(form.username, form.password).then((res) => {
       console.log(res)
       // 判断是否成功
       if (res.data.success === true) {
-        showMessage('登陆成功')
-        // 存储 Token 到 Cookie 中
-        let token = res.data.data.token
-        setToken(token)
-        // 跳转到管理员后台首页
-        if (form.username == "lihainuo") {
-          router.push('/backdesk/adminIndex')
-        } else {
-          // 跳转到用户后台首页
-          console.log(form.username)
-          router.push('/backdesk/userIndex')
-        }
+        showMessage('注册成功')
+        // 跳转到登录首页
+        router.push('/login')
 
       } else {
         // 获取服务端返回的错误消息
         let message = res.data.message
-        showMessage('登录失败', 'error')
+        showMessage(message, 'error')
       }
     })
   })
 }
-
 </script>
 
 <style scoped>

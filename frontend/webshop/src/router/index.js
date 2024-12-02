@@ -1,7 +1,10 @@
 import Index from '@/pages/frontdesk/index.vue'
 import Login from '@/pages/backdesk/login.vue'
-import BackPassword from "@/pages/backdesk/backpassword.vue";
-import { createRouter, createWebHashHistory } from 'vue-router'
+import Register from "@/pages/backdesk/register.vue";
+import Recover from "@/pages/backdesk/recover.vue";
+import AdminIndex from "@/pages/backdesk/adminIndex.vue"
+import UserIndex from "@/pages/backdesk/userIndex.vue"
+import {createRouter, createWebHashHistory} from 'vue-router'
 
 // 统一在这里声明所有路由
 const routes = [
@@ -9,21 +12,42 @@ const routes = [
         path: '/', // 路由地址
         component: Index, // 对应组件
         meta: { // meta 信息
-            title: 'WebShop 首页' // 页面标题
+            title: '首页' // 页面标题
         }
     },
     {
         path: '/login',
         component: Login,
         meta: {
-            title: 'WebShop 登录页'
+            title: '登录'
         }
     },
     {
-        path: '/backPassword',
-        component: BackPassword,
+        path: '/register',
+        component: Register,
         meta: {
-            title: 'WebShop 找回密码页'
+            title: '用户注册'
+        }
+    },
+    {
+        path: '/recover',
+        component: Recover,
+        meta: {
+            title: '找回密码'
+        }
+    },
+    {
+        path: '/backdesk/adminIndex',
+        component: AdminIndex,
+        meta: {
+            title: '管理员后台首页'
+        }
+    },
+    {
+        path: '/backdesk/userIndex',
+        component: UserIndex,
+        meta: {
+            title: '用户后台首页'
         }
     },
 ]

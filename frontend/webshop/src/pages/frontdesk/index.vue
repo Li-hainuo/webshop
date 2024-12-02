@@ -95,3 +95,7 @@ onMounted(() => {
   initCollapses();
 })
 </script>
+
+<style scoped>
+
+</style>

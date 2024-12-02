@@ -1,11 +1,10 @@
-package com.lihainuo.admin.config;
+package com.lihainuo.web.config;
 
 import com.lihainuo.jwt.config.JwtAuthenticationSecurityConfig;
 import com.lihainuo.jwt.filter.TokenAuthenticationFilter;
 import com.lihainuo.jwt.handler.RestAccessDeniedHandler;
 import com.lihainuo.jwt.handler.RestAuthenticationEntryPoint;
 import jakarta.annotation.Resource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

@@ -19,10 +19,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <!--入口模块-->
+        <!--管理模块-->
         <module>webshop-web</module>
-        <!--管理后台模块-->
-        <module>webshop-admin</module>
         <!--公共模块-->
         <module>webshop-common</module>
         <!--JWT模块-->
@@ -58,11 +56,6 @@
             <dependency>
                 <groupId>com.lihainuo</groupId>
                 <artifactId>webshop-web</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.lihainuo</groupId>
-                <artifactId>webshop-admin</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>

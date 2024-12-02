@@ -7,9 +7,13 @@ import '@/assets/main.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 // 导入Animate动画库
 import 'animate.css';
-
+// 导入nprogress动画库
+import 'nprogress/nprogress.css'
 // 导入路由
 import router from '@/router'
+// 导入全局路由守卫
+import '@/permission'
+
 
 const app = createApp(App)
 
